@@ -18,7 +18,7 @@ namespace APIRest01.Controllers {
         }
 
         [HttpGet("soma/{primeiroNumero}/{segundoNumero}")]
-        public IActionResult Get(string primeiroNumero, string segundoNumero) {
+        public IActionResult Soma(string primeiroNumero, string segundoNumero) {
             if (IsNumeric(primeiroNumero) && IsNumeric(segundoNumero)) {
                 var soma = ConverterParaDecimal(primeiroNumero) + ConverterParaDecimal(segundoNumero);
                 return Ok(soma.ToString());
@@ -26,6 +26,41 @@ namespace APIRest01.Controllers {
             return BadRequest("Entrada fornecida inválida");
         }
 
+        [HttpGet("sub/{primeiroNumero}/{segundoNumero}")]
+        public IActionResult Sub(string primeiroNumero, string segundoNumero) {
+            if (IsNumeric(primeiroNumero) && IsNumeric(segundoNumero)) {
+                var sub = ConverterParaDecimal(primeiroNumero) - ConverterParaDecimal(segundoNumero);
+                return Ok(sub.ToString());
+            }
+            return BadRequest("Entrada fornecida inválida");
+        }
+
+        [HttpGet("div/{primeiroNumero}/{segundoNumero}")]
+        public IActionResult Divisao(string primeiroNumero, string segundoNumero) {
+            if (IsNumeric(primeiroNumero) && IsNumeric(segundoNumero)) {
+                var divisao = ConverterParaDecimal(primeiroNumero) / ConverterParaDecimal(segundoNumero);
+                return Ok(divisao.ToString());
+            }
+            return BadRequest("Entrada fornecida inválida");
+        }
+
+        [HttpGet("multi/{primeiroNumero}/{segundoNumero}")]
+        public IActionResult Multiplicacao(string primeiroNumero, string segundoNumero) {
+            if (IsNumeric(primeiroNumero) && IsNumeric(segundoNumero)) {
+                var multiplicacao = ConverterParaDecimal(primeiroNumero) * ConverterParaDecimal(segundoNumero);
+                return Ok(multiplicacao.ToString());
+            }
+            return BadRequest("Entrada fornecida inválida");
+        }
+
+        [HttpGet("raiz-quadrada/{primeiroNumero}")]
+        public IActionResult RaizQuadrada(string primeiroNumero) {
+            if (IsNumeric(primeiroNumero)) {
+                var raizquadrada = Math.Sqrt((double)ConverterParaDecimal(primeiroNumero));
+                return Ok(raizquadrada.ToString());
+            }
+            return BadRequest("Entrada fornecida inválida");
+        }
 
         private bool IsNumeric(string strNumero) {
 
