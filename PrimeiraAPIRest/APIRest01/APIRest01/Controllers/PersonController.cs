@@ -1,4 +1,6 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using APIRest01.Model;
+using APIRest01.Services;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
@@ -12,15 +14,45 @@ namespace APIRest01.Controllers {
         
 
         private readonly ILogger<PersonController> _logger;
+        private IpersonServices _personService;
 
-        public PersonController(ILogger<PersonController> logger) {
+        public PersonController(ILogger<PersonController> logger, IpersonServices personService) {
             _logger = logger;
+            _personService = personService;
         }
 
-        [HttpGet("soma/{primeiroNumero}/{segundoNumero}")]
-        public IActionResult Soma(string primeiroNumero, string segundoNumero) {
+        [HttpGet]
+        public IActionResult Get() {
          
-            return BadRequest("Entrada fornecida inválida");
-        }  
+            return Ok(  _personService.FindAll());
+        }
+
+        [HttpGet("{id}")]
+        public IActionResult Get(long id) {
+            var person = _personService.FindById(id);
+            if (person == null) return NotFound();
+            return Ok();
+        }
+        
+        [HttpPost]
+        public IActionResult Post([FromBody] Person person) {
+            if (person == null) return BadRequest();
+            return Ok(_personService.Create(person));
+        }
+
+        [HttpPut]
+        public IActionResult Put([FromBody] Person person) {
+            if (person == null) return BadRequest();
+            return Ok(_personService.Update(person));
+        }
+
+        [HttpDelete("{id}")]
+        public IActionResult Delete(long id) {
+            _personService.Delete(id);
+            return NoContent();
+        }
+
+
+
     }
 }

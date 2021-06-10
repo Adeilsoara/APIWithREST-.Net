@@ -1,3 +1,5 @@
+using APIRest01.Services.Implemetations;
+using APIRest01.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -23,6 +25,7 @@ namespace APIRest01 {
         public void ConfigureServices(IServiceCollection services) {
 
             services.AddControllers();
+            services.AddScoped<IpersonServices, PersonServiceImplementation>
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
