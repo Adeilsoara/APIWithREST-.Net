@@ -12,6 +12,9 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using APIRest01.Model.Context;
+using Microsoft.EntityFrameworkCore;
+using Pomelo.EntityFrameworkCore.MySql;
 
 namespace APIRest01 {
     public class Startup {
@@ -25,6 +28,12 @@ namespace APIRest01 {
         public void ConfigureServices(IServiceCollection services) {
 
             services.AddControllers();
+
+            var connection = Configuration["ConnectionStrings:MySQLConnectionString"];
+            var serverVersion = new MySqlServerVersion(new Version(8, 0, 25));
+            services.AddDbContext<MysqlContext>(
+            options => options.UseMySql(connection, serverVersion));
+
             services.AddScoped<IpersonServices, PersonServiceImplementation>();
         }
 

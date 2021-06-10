@@ -1,14 +1,28 @@
 using APIRest01.Model;
+using APIRest01.Model.Context;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Runtime.InteropServices;
 using System.Threading;
 
 namespace APIRest01.Services.Implemetations {
     public class PersonServiceImplementation : IpersonServices {
-        private volatile int count;
+        private MysqlContext _context;
 
+        public PersonServiceImplementation(MysqlContext context) {
+            _context = context;
+        }
+       
         public Person Create(Person person) {
+            try {
+                _context.Add(person);
+                _context.SaveChanges();
+            }
+            catch (Exception) {
+
+                throw;
+            }
             return person;
         }
 
@@ -16,42 +30,28 @@ namespace APIRest01.Services.Implemetations {
            
         }
 
-        public List<Person> FindAll() {
-            List<Person> persons = new List<Person>();
-            for (int i = 0; i < 8; i++) {
-                Person person = MockPerson(i);
-                persons.Add(person);
-            }
-            return persons;
+        public List<Person> FindAll() { 
+            
+            return _context.Persons.ToList();
+
         }
 
    
         public Person FindById(long id) {
-            return new Person {
-                Id = IncrementAndGet(),
-                Nome = "Adeilson",
-                Sobrenome = "Aragão",
-                Endereco = "Rua das Lagoas",
-                Genero = "Masculina"
-            };
+            return _context.Persons.SingleOrDefault(p => p.Id.Equals(id));
         }
 
         public Person Update(Person person) {
+            try {
+                _context.Add(person);
+                _context.SaveChanges();
+            }
+            catch (Exception) {
+
+                throw;
+            }
             return person;
         }
-
-        private Person MockPerson(int i) {
-            return new Person {
-                Id = IncrementAndGet(),
-                Nome = "Nome" + i,
-                Sobrenome = "Sobrenome" + i,
-                Endereco = "Endereco" + i,
-                Genero = "Masculino"
-            };
-        }
-
-        private long IncrementAndGet() {
-            return Interlocked.Increment(ref count);
-        }
     }
-}
+
+    }
