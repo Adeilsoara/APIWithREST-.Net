@@ -25,7 +25,7 @@ namespace APIRest01 {
         public void ConfigureServices(IServiceCollection services) {
 
             services.AddControllers();
-            services.AddScoped<IpersonServices, PersonServiceImplementation>
+            services.AddScoped<IpersonServices, PersonServiceImplementation>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

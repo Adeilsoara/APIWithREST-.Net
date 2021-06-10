@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace APIRest01.Controllers {
     [ApiController]
-    [Route("[controller]")]
+    [Route("api/[controller]")]
     public class PersonController : ControllerBase {
         
 
