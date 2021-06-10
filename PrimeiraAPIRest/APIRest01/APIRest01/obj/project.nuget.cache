@@ -1,10 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "tUwb4574Rarr7usfbS6uqDvZsBiwMSuVUhHyq+2W1PzlKp7NTnvU9RJyJWIv38Ix6hG/ltZdsyKFsrb36kQ18Q==",
+  "dgSpecHash": "2iuMq4B0UgWj7wYz1oHr0XhVB6D3nw0vwkmsu9X61rv1nBIg7wkzsDNlyE/koNbuuyDZUrYAkVvTySUwTmxj1w==",
   "success": true,
   "projectFilePath": "C:\\Users\\adeil\\Documents\\EstudandoAPIRest.Net\\PrimeiraAPIRest\\APIRest01\\APIRest01\\APIRest01.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\adeil\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
+    "C:\\Users\\adeil\\.nuget\\packages\\microsoft.aspnetcore.mvc.versioning\\5.0.0\\microsoft.aspnetcore.mvc.versioning.5.0.0.nupkg.sha512",
     "C:\\Users\\adeil\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
     "C:\\Users\\adeil\\.nuget\\packages\\microsoft.entityframeworkcore\\5.0.7\\microsoft.entityframeworkcore.5.0.7.nupkg.sha512",
     "C:\\Users\\adeil\\.nuget\\packages\\microsoft.entityframeworkcore.abstractions\\5.0.7\\microsoft.entityframeworkcore.abstractions.5.0.7.nupkg.sha512",

@@ -34,6 +34,8 @@ namespace APIRest01 {
             services.AddDbContext<MysqlContext>(
             options => options.UseMySql(connection, serverVersion));
 
+            services.AddApiVersioning();
+
             services.AddScoped<IpersonServices, PersonServiceImplementation>();
         }
 

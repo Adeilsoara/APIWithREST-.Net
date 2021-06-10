@@ -32,3 +32,6 @@ C:\Users\adeil\Documents\EstudandoAPIRest.Net\PrimeiraAPIRest\APIRest01\APIRest0
 C:\Users\adeil\Documents\EstudandoAPIRest.Net\PrimeiraAPIRest\APIRest01\APIRest01\obj\Debug\net5.0\ref\APIRest01.dll
 C:\Users\adeil\Documents\EstudandoAPIRest.Net\PrimeiraAPIRest\APIRest01\APIRest01\obj\Debug\net5.0\APIRest01.pdb
 C:\Users\adeil\Documents\EstudandoAPIRest.Net\PrimeiraAPIRest\APIRest01\APIRest01\obj\Debug\net5.0\APIRest01.genruntimeconfig.cache
+C:\Users\adeil\Documents\EstudandoAPIRest.Net\PrimeiraAPIRest\APIRest01\APIRest01\obj\Debug\net5.0\APIRest01.csprojAssemblyReference.cache
+C:\Users\adeil\Documents\EstudandoAPIRest.Net\PrimeiraAPIRest\APIRest01\APIRest01\bin\Debug\net5.0\Microsoft.AspNetCore.Mvc.Versioning.dll
+C:\Users\adeil\Documents\EstudandoAPIRest.Net\PrimeiraAPIRest\APIRest01\APIRest01\obj\Debug\net5.0\APIRest01.MvcApplicationPartsAssemblyInfo.cs
