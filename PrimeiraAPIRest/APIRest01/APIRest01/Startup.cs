@@ -30,8 +30,6 @@ namespace APIRest01 {
             Log.Logger = new LoggerConfiguration().WriteTo.Console().CreateLogger();
         }
 
-      
-
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services) {
 
