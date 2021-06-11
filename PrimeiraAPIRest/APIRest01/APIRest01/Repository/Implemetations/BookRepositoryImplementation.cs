@@ -28,7 +28,7 @@ namespace APIRest01.Business.Implemetations {
         }
 
         public void Delete(long id) {
-            var result = _context.Books.SingleOrDefault(b => b.Id.Equals(id));
+            var result = _context.Books.SingleOrDefault(p => p.Id.Equals(id));
             if (result != null) {
                 try {
                     _context.Books.Remove(result);
@@ -41,20 +41,17 @@ namespace APIRest01.Business.Implemetations {
             }
         }
 
-        public List<Book> FindAll() { 
-            
+        public List<Book> FindAll() {
             return _context.Books.ToList();
-
         }
 
-   
         public Book FindById(long id) {
-            return _context.Books.SingleOrDefault(b => b.Id.Equals(id));
+            return _context.Books.SingleOrDefault(p => p.Id.Equals(id));
         }
 
         public Book Update(Book book) {
             if (!Exists(book.Id)) return null;
-            var result = _context.Books.SingleOrDefault(b => b.Id.Equals(book.Id));
+            var result = _context.Books.SingleOrDefault(p => p.Id.Equals(book.Id));
 
             if (result != null) {
                 try {
@@ -71,7 +68,7 @@ namespace APIRest01.Business.Implemetations {
         }
 
         private bool Exists(long id) {
-            return _context.Books.Any(b => b.Id.Equals(id));
+            return _context.Books.Any(p => p.Id.Equals(id));
         }
 
         bool IBookRepository.Exists(long id) {

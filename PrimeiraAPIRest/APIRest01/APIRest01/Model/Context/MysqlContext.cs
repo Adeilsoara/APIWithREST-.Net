@@ -1,5 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using System;
+using System.Collections.Generic;
 
 namespace APIRest01.Model.Context {
     public class MysqlContext : DbContext {
@@ -12,5 +13,6 @@ namespace APIRest01.Model.Context {
         public DbSet<Person> Persons { get; set; }
         public DbSet<Book> Books { get; set; }
 
+      
     }
 }

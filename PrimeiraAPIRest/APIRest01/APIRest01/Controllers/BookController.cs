@@ -32,7 +32,7 @@ namespace APIRest01.Controllers {
         public IActionResult Get(long id) {
             var book = _bookBusiness.FindById(id);
             if (book == null) return NotFound();
-            return Ok();
+            return Ok(book);
         }
         
         [HttpPost]

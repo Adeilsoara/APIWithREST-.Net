@@ -14,7 +14,7 @@ namespace APIRest01.Model {
         public string Author { get; set; }
 
         [Column("price")]
-        public string Price { get; set; }
+        public double Price { get; set; }
 
         [Column("launch_date")]
         public DateTime LaunchDate { get; set; }

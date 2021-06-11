@@ -45,10 +45,13 @@ namespace APIRest01 {
             }
 
             services.AddApiVersioning();
-
+            
+            //injeção de dependências 
             services.AddScoped<IPersonBusiness, PersonBusinessImplementation>();
-            //services.AddScoped<IPersonRepository, PersonRepositoryImplementation>();
             services.AddScoped<IPersonRepository, PersonRepositoryImplementation>();
+
+            services.AddScoped<IBookBusiness, BookBusinessImplementation>();
+            services.AddScoped<IBookRepository, BookRepositoryImplementation>();
         }
 
        
