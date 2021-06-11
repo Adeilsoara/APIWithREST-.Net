@@ -35,3 +35,16 @@ C:\Users\adeil\Documents\EstudandoAPIRest.Net\PrimeiraAPIRest\APIRest01\APIRest0
 C:\Users\adeil\Documents\EstudandoAPIRest.Net\PrimeiraAPIRest\APIRest01\APIRest01\obj\Debug\net5.0\APIRest01.csprojAssemblyReference.cache
 C:\Users\adeil\Documents\EstudandoAPIRest.Net\PrimeiraAPIRest\APIRest01\APIRest01\bin\Debug\net5.0\Microsoft.AspNetCore.Mvc.Versioning.dll
 C:\Users\adeil\Documents\EstudandoAPIRest.Net\PrimeiraAPIRest\APIRest01\APIRest01\obj\Debug\net5.0\APIRest01.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\adeil\Documents\EstudandoAPIRest.Net\PrimeiraAPIRest\APIRest01\APIRest01\bin\Debug\net5.0\Evolve.dll
+C:\Users\adeil\Documents\EstudandoAPIRest.Net\PrimeiraAPIRest\APIRest01\APIRest01\bin\Debug\net5.0\Microsoft.DotNet.PlatformAbstractions.dll
+C:\Users\adeil\Documents\EstudandoAPIRest.Net\PrimeiraAPIRest\APIRest01\APIRest01\bin\Debug\net5.0\Microsoft.Extensions.DependencyModel.dll
+C:\Users\adeil\Documents\EstudandoAPIRest.Net\PrimeiraAPIRest\APIRest01\APIRest01\bin\Debug\net5.0\Newtonsoft.Json.dll
+C:\Users\adeil\Documents\EstudandoAPIRest.Net\PrimeiraAPIRest\APIRest01\APIRest01\bin\Debug\net5.0\Serilog.dll
+C:\Users\adeil\Documents\EstudandoAPIRest.Net\PrimeiraAPIRest\APIRest01\APIRest01\bin\Debug\net5.0\Serilog.AspNetCore.dll
+C:\Users\adeil\Documents\EstudandoAPIRest.Net\PrimeiraAPIRest\APIRest01\APIRest01\bin\Debug\net5.0\Serilog.Extensions.Hosting.dll
+C:\Users\adeil\Documents\EstudandoAPIRest.Net\PrimeiraAPIRest\APIRest01\APIRest01\bin\Debug\net5.0\Serilog.Extensions.Logging.dll
+C:\Users\adeil\Documents\EstudandoAPIRest.Net\PrimeiraAPIRest\APIRest01\APIRest01\bin\Debug\net5.0\Serilog.Formatting.Compact.dll
+C:\Users\adeil\Documents\EstudandoAPIRest.Net\PrimeiraAPIRest\APIRest01\APIRest01\bin\Debug\net5.0\Serilog.Settings.Configuration.dll
+C:\Users\adeil\Documents\EstudandoAPIRest.Net\PrimeiraAPIRest\APIRest01\APIRest01\bin\Debug\net5.0\Serilog.Sinks.Console.dll
+C:\Users\adeil\Documents\EstudandoAPIRest.Net\PrimeiraAPIRest\APIRest01\APIRest01\bin\Debug\net5.0\Serilog.Sinks.Debug.dll
+C:\Users\adeil\Documents\EstudandoAPIRest.Net\PrimeiraAPIRest\APIRest01\APIRest01\bin\Debug\net5.0\Serilog.Sinks.File.dll

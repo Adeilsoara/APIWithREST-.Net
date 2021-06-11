@@ -1,0 +1,1 @@
+INSERT INTO person VALUES (2,'são francisco','adelaide','f','mota'),(4,'vila união','jubliqueiton','m','romão');
