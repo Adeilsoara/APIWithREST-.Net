@@ -1,5 +1,5 @@
-using APIRest01.Services.Implemetations;
-using APIRest01.Services;
+using APIRest01.Business.Implemetations;
+using APIRest01.Business;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -15,6 +15,7 @@ using System.Threading.Tasks;
 using APIRest01.Model.Context;
 using Microsoft.EntityFrameworkCore;
 using Pomelo.EntityFrameworkCore.MySql;
+using APIRest01.Repository;
 
 namespace APIRest01 {
     public class Startup {
@@ -36,7 +37,9 @@ namespace APIRest01 {
 
             services.AddApiVersioning();
 
-            services.AddScoped<IpersonServices, PersonServiceImplementation>();
+            services.AddScoped<IPersonBusiness, PersonBusinessImplementation>();
+            //services.AddScoped<IPersonRepository, PersonRepositoryImplementation>();
+            services.AddScoped<IPersonRepository, PersonRepositoryImplementation>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

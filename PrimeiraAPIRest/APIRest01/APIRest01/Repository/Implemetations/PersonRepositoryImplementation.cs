@@ -1,16 +1,17 @@
 using APIRest01.Model;
 using APIRest01.Model.Context;
+using APIRest01.Repository;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.InteropServices;
 using System.Threading;
 
-namespace APIRest01.Services.Implemetations {
-    public class PersonServiceImplementation : IpersonServices {
+namespace APIRest01.Business.Implemetations {
+    public class PersonRepositoryImplementation : IPersonRepository {
         private MysqlContext _context;
 
-        public PersonServiceImplementation(MysqlContext context) {
+        public PersonRepositoryImplementation(MysqlContext context) {
             _context = context;
         }
        
@@ -71,6 +72,10 @@ namespace APIRest01.Services.Implemetations {
 
         private bool Exists(long id) {
             return _context.Persons.Any(p => p.Id.Equals(id));
+        }
+
+        bool IPersonRepository.Exists(long id) {
+            throw new NotImplementedException();
         }
     }
 

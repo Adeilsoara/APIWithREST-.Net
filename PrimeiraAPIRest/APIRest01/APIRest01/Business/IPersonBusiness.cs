@@ -2,8 +2,8 @@ using System;
 using System.Collections.Generic;
 using APIRest01.Model;
 
-namespace APIRest01.Services {
-    public interface IpersonServices {
+namespace APIRest01.Business {
+    public interface IPersonBusiness {
 
         Person Create(Person person);
         Person FindById(long id);
