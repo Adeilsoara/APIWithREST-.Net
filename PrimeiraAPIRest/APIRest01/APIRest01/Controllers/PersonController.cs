@@ -6,6 +6,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using APIRest01.Data.Vo;
 
 namespace APIRest01.Controllers {
     [ApiVersion("1")]
@@ -36,13 +37,13 @@ namespace APIRest01.Controllers {
         }
         
         [HttpPost]
-        public IActionResult Post([FromBody] Person person) {
+        public IActionResult Post([FromBody] PersonVo person) {
             if (person == null) return BadRequest();
             return Ok(_personBusiness.Create(person));
         }
 
         [HttpPut]
-        public IActionResult Put([FromBody] Person person) {
+        public IActionResult Put([FromBody] PersonVo person) {
             if (person == null) return BadRequest();
             return Ok(_personBusiness.Update(person));
         }

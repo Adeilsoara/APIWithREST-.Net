@@ -1,14 +1,15 @@
 using System;
 using System.Collections.Generic;
+using APIRest01.Data.Vo;
 using APIRest01.Model;
 
 namespace APIRest01.Business {
     public interface IPersonBusiness {
 
-        Person Create(Person person);
-        Person FindById(long id);
-        List<Person> FindAll();
-        Person Update(Person person);
+        PersonVo Create(PersonVo person);
+        PersonVo FindById(long id);
+        List<PersonVo> FindAll();
+        PersonVo Update(PersonVo person);
         void Delete(long id);
     }
 }

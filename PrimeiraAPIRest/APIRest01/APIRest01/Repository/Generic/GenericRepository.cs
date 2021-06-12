@@ -24,10 +24,8 @@ namespace APIRest01.Repository.Generic {
                 return item;
             }
             catch (Exception) {
-
                 throw;
             }
-
         }
 
         public void Delete(long id) {

@@ -36,13 +36,13 @@ namespace APIRest01.Controllers {
         }
         
         [HttpPost]
-        public IActionResult Post([FromBody] Book book) {
+        public IActionResult Post([FromBody] BookVo book) {
             if (book == null) return BadRequest();
             return Ok(_bookBusiness.Create(book));
         }
 
         [HttpPut]
-        public IActionResult Put([FromBody] Book book) {
+        public IActionResult Put([FromBody] BookVo book) {
             if (book == null) return BadRequest();
             return Ok(_bookBusiness.Update(book));
         }
