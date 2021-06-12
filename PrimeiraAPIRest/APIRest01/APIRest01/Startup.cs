@@ -19,6 +19,7 @@ using APIRest01.Repository;
 using Serilog;
 using MySqlConnector;
 using APIRest01.Repository.Generic;
+using Microsoft.Net.Http.Headers;
 
 namespace APIRest01 {
     public class Startup {
@@ -44,6 +45,14 @@ namespace APIRest01 {
             if (Environment.IsDevelopment()) {
                 MigrateDatabase(connection);
             }
+
+            services.AddMvc(options => {
+                options.RespectBrowserAcceptHeader = true;
+                options.FormatterMappings.SetMediaTypeMappingForFormat("xml", MediaTypeHeaderValue.Parse("application/xml").ToString());
+                options.FormatterMappings.SetMediaTypeMappingForFormat("json", MediaTypeHeaderValue.Parse("application/json").ToString());
+
+            }).AddXmlSerializerFormatters();
+
 
             services.AddApiVersioning();
             
