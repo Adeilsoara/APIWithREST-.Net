@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace APIRest01.Model {
     public class BookVo {
-
+        
         public long Id { get; set; }
 
         public string Title { get; set; }
