@@ -18,6 +18,7 @@ using Pomelo.EntityFrameworkCore.MySql;
 using APIRest01.Repository;
 using Serilog;
 using MySqlConnector;
+using APIRest01.Repository.Generic;
 
 namespace APIRest01 {
     public class Startup {
@@ -51,7 +52,8 @@ namespace APIRest01 {
             services.AddScoped<IPersonRepository, PersonRepositoryImplementation>();
 
             services.AddScoped<IBookBusiness, BookBusinessImplementation>();
-            services.AddScoped<IBookRepository, BookRepositoryImplementation>();
+            //services.AddScoped<IBookRepository, BookRepositoryImplementation>();
+            services.AddScoped(typeof(IRepository<>), typeof(GenericRepository<>));
         }
 
        

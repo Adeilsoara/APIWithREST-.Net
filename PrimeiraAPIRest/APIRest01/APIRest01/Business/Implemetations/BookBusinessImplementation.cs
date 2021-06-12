@@ -11,9 +11,9 @@ using APIRest01.Business;
 namespace APIRest01.Business.Implemetations {
     public class BookBusinessImplementation : IBookBusiness {
         
-        private readonly IBookRepository _repository;
+        private readonly IRepository<Book> _repository;
 
-        public BookBusinessImplementation(IBookRepository repository) {
+        public BookBusinessImplementation(IRepository<Book> repository) {
             _repository = repository;
         }
        
