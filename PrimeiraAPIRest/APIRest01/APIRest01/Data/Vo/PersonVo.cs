@@ -2,7 +2,7 @@ using System.Text.Json.Serialization;
 
 namespace APIRest01.Data.Vo {
     public class PersonVo {
-        [JsonPropertyName("")]
+       
         public long Id { get; set; }
 
         public string Nome { get; set; }
