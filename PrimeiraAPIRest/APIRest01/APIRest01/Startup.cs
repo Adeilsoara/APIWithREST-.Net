@@ -20,6 +20,10 @@ using Serilog;
 using MySqlConnector;
 using APIRest01.Repository.Generic;
 using Microsoft.Net.Http.Headers;
+using APIRest01.Hypermidia.Filter;
+using APIRest01.Hypermidia.Enricher;
+using Microsoft.OpenApi.Models;
+using Microsoft.AspNetCore.Rewrite;
 
 namespace APIRest01 {
     public class Startup {
@@ -48,14 +52,33 @@ namespace APIRest01 {
 
             services.AddMvc(options => {
                 options.RespectBrowserAcceptHeader = true;
-                options.FormatterMappings.SetMediaTypeMappingForFormat("xml", MediaTypeHeaderValue.Parse("application/xml").ToString());
-                options.FormatterMappings.SetMediaTypeMappingForFormat("json", MediaTypeHeaderValue.Parse("application/json").ToString());
 
-            }).AddXmlSerializerFormatters();
+                options.FormatterMappings.SetMediaTypeMappingForFormat("xml", MediaTypeHeaderValue.Parse("application/xml"));
+                options.FormatterMappings.SetMediaTypeMappingForFormat("json", MediaTypeHeaderValue.Parse("application/json"));
+            })
+            .AddXmlSerializerFormatters();
 
+            var filterOptions = new HyperMidiaFilterOptions();
+            filterOptions.ContentResponseEnricherList.Add(new PersonEnricher());
+            //filterOptions.ContentResponseEnricherList.Add(new BookEnricher());
+
+            services.AddSingleton(filterOptions);
 
             services.AddApiVersioning();
-            
+
+            services.AddSwaggerGen(c => {
+                c.SwaggerDoc("v1",
+                    new OpenApiInfo {
+                        Title = "REST API's From 0 to Azure with ASP.NET Core 5 and Docker",
+                        Version = "v1",
+                        Description = "API RESTful developed in course 'REST API's From 0 to Azure with ASP.NET Core 5 and Docker'",
+                        Contact = new OpenApiContact {
+                            Name = "Adeilson",
+                            Url = new Uri("https://github.com/Adeilsoara")
+                        }
+                    });
+            });
+
             //injeção de dependências 
             services.AddScoped<IPersonBusiness, PersonBusinessImplementation>();
 
@@ -75,10 +98,22 @@ namespace APIRest01 {
 
             app.UseRouting();
 
+            app.UseSwagger();
+
+            app.UseSwaggerUI(c => {
+                c.SwaggerEndpoint("/swagger/v1/swagger.json",
+                    "REST API's From 0 to Azure with ASP.NET Core 5 and Docker - v1");
+            });
+
+            var option = new RewriteOptions();
+            option.AddRedirect("^$", "swagger");
+            app.UseRewriter(option);
+
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints => {
                 endpoints.MapControllers();
+                endpoints.MapControllerRoute("DefaultApi", "{controller=values}/{id?}");
             });
         }
 

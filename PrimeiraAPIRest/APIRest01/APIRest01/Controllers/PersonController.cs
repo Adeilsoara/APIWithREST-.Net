@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using APIRest01.Data.Vo;
+using APIRest01.Hypermidia.Filter;
 
 namespace APIRest01.Controllers {
     [ApiVersion("1")]
@@ -24,12 +25,22 @@ namespace APIRest01.Controllers {
         }
 
         [HttpGet]
+        [ProducesResponseType((200), Type = typeof(List<PersonVo>))]
+        [ProducesResponseType(204)]
+        [ProducesResponseType(400)]
+        [ProducesResponseType(401)]
+        [TypeFilter(typeof(HyperMidiaFilter))]
         public IActionResult Get() {
          
             return Ok(_personBusiness.FindAll());
         }
 
         [HttpGet("{id}")]
+        [ProducesResponseType((200), Type = typeof(PersonVo))]
+        [ProducesResponseType(204)]
+        [ProducesResponseType(400)]
+        [ProducesResponseType(401)]
+        [TypeFilter(typeof(HyperMidiaFilter))]
         public IActionResult Get(long id) {
             var person = _personBusiness.FindById(id);
             if (person == null) return NotFound();
@@ -37,18 +48,29 @@ namespace APIRest01.Controllers {
         }
         
         [HttpPost]
+        [ProducesResponseType((200), Type = typeof(PersonVo))]
+        [ProducesResponseType(400)]
+        [ProducesResponseType(401)]
+        [TypeFilter(typeof(HyperMidiaFilter))]
         public IActionResult Post([FromBody] PersonVo person) {
             if (person == null) return BadRequest();
             return Ok(_personBusiness.Create(person));
         }
 
         [HttpPut]
+        [ProducesResponseType((200), Type = typeof(PersonVo))]
+        [ProducesResponseType(400)]
+        [ProducesResponseType(401)]
+        [TypeFilter(typeof(HyperMidiaFilter))]
         public IActionResult Put([FromBody] PersonVo person) {
             if (person == null) return BadRequest();
             return Ok(_personBusiness.Update(person));
         }
 
         [HttpDelete("{id}")]
+        [ProducesResponseType(204)]
+        [ProducesResponseType(400)]
+        [ProducesResponseType(401)]
         public IActionResult Delete(long id) {
             _personBusiness.Delete(id);
             return NoContent();
